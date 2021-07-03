@@ -9,6 +9,7 @@
         android:id="@+id/slide"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/guidelinePagination"
         app:layout_constraintDimensionRatio="W, 16:9"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,6 +24,27 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/df_side_note"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineSideHorizontal"
+            app:layout_constraintStart_toStartOf="@id/guidelineSideVertical" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineSideHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineSideVertical"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.02" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -59,11 +81,11 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:src="@drawable/df_home_flag"
         android:adjustViewBounds="true"
-        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/df_home_flag"
         app:layout_constraintBottom_toTopOf="@id/guidelineFlag"
-        app:layout_constraintStart_toStartOf="@id/slide"/>
+        app:layout_constraintStart_toStartOf="@id/slide"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineFlag"
