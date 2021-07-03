@@ -11,6 +11,14 @@ class FrisianFlagFragment : Fragment() {
     private var _binding: FragmentSlideShowBinding? = null
     private val binding get() = _binding!!
 
+    private var _currentPage = 0
+    private var currentPage
+        get() = _currentPage
+        set(value) {
+            _currentPage = value
+            gotoPage(_currentPage)
+        }
+
     private lateinit var assets: List<Int>
 
     override fun onCreateView(
@@ -31,7 +39,7 @@ class FrisianFlagFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.slideAsset.setImageResource(assets[0])
+        gotoPage(currentPage)
 
         with(binding.pagination) {
             numberOfItems = assets.size
@@ -40,9 +48,25 @@ class FrisianFlagFragment : Fragment() {
             registerListener(object : PaginationView.OnTouchListener {
                 override fun onItemTouched(page: Int) {
                     selectedItem = page
-                    binding.slideAsset.setImageResource(assets[page - 1])
+                    currentPage = page - 1
                 }
             })
         }
+
+        binding.prevButton.setOnClickListener { currentPage -= 1 }
+        binding.nextButton.setOnClickListener { currentPage += 1 }
+    }
+
+    private fun gotoPage(page: Int) {
+        binding.slideAsset.setImageResource(assets[page])
+        when (currentPage) {
+            0 -> binding.prevButton.visibility = View.GONE
+            assets.size - 1 -> binding.nextButton.visibility = View.GONE
+            else -> {
+                binding.prevButton.visibility = View.VISIBLE
+                binding.nextButton.visibility = View.VISIBLE
+            }
+        }
+        binding.pagination.selectedItem = currentPage + 1
     }
 }
