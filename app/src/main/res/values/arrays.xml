@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="ff_assets">
+        <item>@drawable/ff_asset_1</item>
+        <item>@drawable/ff_asset_2</item>
+        <item>@drawable/ff_asset_3</item>
+        <item>@drawable/ff_asset_4</item>
+        <item>@drawable/ff_asset_5</item>
+        <item>@drawable/ff_asset_6</item>
+        <item>@drawable/ff_asset_7</item>
+        <item>@drawable/ff_asset_8</item>
+        <item>@drawable/ff_asset_9</item>
+        <item>@drawable/ff_asset_10</item>
+        <item>@drawable/ff_asset_11</item>
+        <item>@drawable/ff_asset_12</item>
+        <item>@drawable/ff_asset_13</item>
+        <item>@drawable/ff_asset_14</item>
+        <item>@drawable/ff_asset_15</item>
+        <item>@drawable/ff_asset_16</item>
+        <item>@drawable/ff_asset_17</item>
+        <item>@drawable/ff_asset_18</item>
+        <item>@drawable/ff_asset_19</item>
+        <item>@drawable/ff_asset_20</item>
+        <item>@drawable/ff_asset_21</item>
+        <item>@drawable/ff_asset_22</item>
+        <item>@drawable/ff_asset_23</item>
+        <item>@drawable/ff_asset_24</item>
+        <item>@drawable/ff_asset_25</item>
+        <item>@drawable/ff_asset_26</item>
+        <item>@drawable/ff_asset_27</item>
+        <item>@drawable/ff_asset_28</item>
+        <item>@drawable/ff_asset_29</item>
+        <item>@drawable/ff_asset_30</item>
+        <item>@drawable/ff_asset_31</item>
+        <item>@drawable/ff_asset_32</item>
+        <item>@drawable/ff_asset_33</item>
+        <item>@drawable/ff_asset_34</item>
+    </integer-array>
+</resources>

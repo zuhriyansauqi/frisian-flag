@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="odd_start">#145799</color>
+    <color name="odd_end">#0B63A7</color>
+    <color name="even_start">#0080C2</color>
+    <color name="even_end">#009BD6</color>
+    <color name="pagination_item">#FFFFFF</color>
+    <color name="pagination_item_selected">#023F88</color>
 </resources>

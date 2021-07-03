@@ -1,6 +1,7 @@
 package com.zuhriyansauqi.frisianflag
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.zuhriyansauqi.frisianflag.databinding.ActivityMainBinding
 
