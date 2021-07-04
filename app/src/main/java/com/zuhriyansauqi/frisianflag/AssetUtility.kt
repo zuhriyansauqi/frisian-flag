@@ -14,3 +14,22 @@ fun loadAssets(context: Context, @ArrayRes id: Int): List<Int> {
     tArray.recycle()
     return result.toList()
 }
+
+fun loadBackgrounds(
+    context: Context,
+    @ArrayRes indexes: Int,
+    @ArrayRes backgrounds: Int
+): Map<Int, Int> {
+    val tArrayIndexes = context.resources.obtainTypedArray(indexes)
+    val tArray = context.resources.obtainTypedArray(backgrounds)
+    val result = mutableMapOf<Int, Int>()
+
+    for (i in 0 until tArray.length()) {
+        result[tArrayIndexes.getInt(i, 0)] = tArray.getResourceId(i, 0)
+    }
+
+    tArrayIndexes.recycle()
+    tArray.recycle()
+
+    return result.toMap()
+}

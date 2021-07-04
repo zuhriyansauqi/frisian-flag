@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
@@ -25,6 +26,7 @@ class FrisianFlagFragment : Fragment() {
     private var isLoading = false
 
     private lateinit var assets: List<Int>
+    private lateinit var backgrounds: Map<Int, Int>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,6 +35,8 @@ class FrisianFlagFragment : Fragment() {
     ): View {
         _binding = FragmentSlideShowBinding.inflate(inflater, container, false)
         assets = loadAssets(requireContext(), R.array.ff_assets)
+        backgrounds =
+            loadBackgrounds(requireContext(), R.array.ff_background_indexes, R.array.ff_backgrounds)
         return binding.root
     }
 
@@ -65,6 +69,12 @@ class FrisianFlagFragment : Fragment() {
 
     private fun gotoPage(page: Int, isPrev: Boolean = false) {
         isLoading = true
+
+        if (backgrounds.containsKey(page + 1))
+            binding.root.setBackgroundResource(backgrounds[page + 1]!!)
+        else
+            binding.root.background =
+                ContextCompat.getDrawable(requireContext(), R.drawable.df_background)
 
         val exitTechniques =
             if (isPrev) Techniques.SlideOutLeft

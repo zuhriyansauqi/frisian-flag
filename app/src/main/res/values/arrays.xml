@@ -36,4 +36,28 @@
         <item>@drawable/ff_asset_33</item>
         <item>@drawable/ff_asset_34</item>
     </integer-array>
+    <integer-array name="ff_backgrounds">
+        <item>@drawable/ff_background_5</item>
+        <item>@drawable/ff_background_6</item>
+        <item>@drawable/ff_background_7</item>
+        <item>@drawable/ff_background_8</item>
+        <item>@drawable/ff_background_9</item>
+        <item>@drawable/ff_background_10</item>
+        <item>@drawable/ff_background_11</item>
+        <item>@drawable/ff_background_12</item>
+        <item>@drawable/ff_background_13</item>
+        <item>@drawable/ff_background_15</item>
+    </integer-array>
+    <integer-array name="ff_background_indexes">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>15</item>
+    </integer-array>
 </resources>
