@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- FF -->
     <integer-array name="ff_assets">
         <item>@drawable/ff_asset_1</item>
         <item>@drawable/ff_asset_2</item>
@@ -59,5 +60,82 @@
         <item>12</item>
         <item>13</item>
         <item>15</item>
+    </integer-array>
+
+    <!-- HPK -->
+    <integer-array name="hpk_assets">
+        <item>@drawable/hpk_asset_1</item>
+        <item>@drawable/hpk_asset_2</item>
+        <item>@drawable/hpk_asset_3</item>
+        <item>@drawable/hpk_asset_4</item>
+        <item>@drawable/hpk_asset_5</item>
+        <item>@drawable/hpk_asset_6</item>
+        <item>@drawable/hpk_asset_7</item>
+        <item>@drawable/hpk_asset_8</item>
+        <item>@drawable/hpk_asset_9</item>
+        <item>@drawable/hpk_asset_10</item>
+        <item>@drawable/hpk_asset_11</item>
+    </integer-array>
+    <integer-array name="hpk_backgrounds">
+        <item>@drawable/hpk_backgroung_11</item>
+    </integer-array>
+    <integer-array name="hpk_background_indexes">
+        <item>11</item>
+    </integer-array>
+
+    <!--STUN -->
+    <integer-array name="stun_assets">
+        <item>@drawable/stun_asset_1</item>
+        <item>@drawable/stun_asset_2</item>
+        <item>@drawable/stun_asset_3</item>
+        <item>@drawable/stun_asset_4</item>
+        <item>@drawable/stun_asset_5</item>
+        <item>@drawable/stun_asset_6</item>
+        <item>@drawable/stun_asset_7</item>
+        <item>@drawable/stun_asset_8</item>
+        <item>@drawable/stun_asset_9</item>
+        <item>@drawable/stun_asset_10</item>
+        <item>@drawable/stun_asset_11</item>
+        <item>@drawable/stun_asset_12</item>
+        <item>@drawable/stun_asset_13</item>
+        <item>@drawable/stun_asset_14</item>
+        <item>@drawable/stun_asset_15</item>
+        <item>@drawable/stun_asset_16</item>
+        <item>@drawable/stun_asset_17</item>
+        <item>@drawable/stun_asset_18</item>
+        <item>@drawable/stun_asset_19</item>
+        <item>@drawable/stun_asset_20</item>
+        <item>@drawable/stun_asset_21</item>
+        <item>@drawable/stun_asset_22</item>
+        <item>@drawable/stun_asset_23</item>
+        <item>@drawable/stun_asset_24</item>
+    </integer-array>
+
+    <!-- MUM -->
+    <integer-array name="mum_assets">
+        <item>@drawable/mum_asset_1</item>
+        <item>@drawable/mum_asset_2</item>
+        <item>@drawable/mum_asset_3</item>
+        <item>@drawable/mum_asset_4</item>
+        <item>@drawable/mum_asset_5</item>
+        <item>@drawable/mum_asset_6</item>
+        <item>@drawable/mum_asset_7</item>
+        <item>@drawable/mum_asset_8</item>
+        <item>@drawable/mum_asset_9</item>
+    </integer-array>
+
+    <!-- ASI -->
+    <integer-array name="asi_assets">
+        <item>@drawable/asi_asset_1</item>
+        <item>@drawable/asi_asset_2</item>
+        <item>@drawable/asi_asset_3</item>
+        <item>@drawable/asi_asset_4</item>
+        <item>@drawable/asi_asset_5</item>
+        <item>@drawable/asi_asset_6</item>
+        <item>@drawable/asi_asset_7</item>
+        <item>@drawable/asi_asset_8</item>
+        <item>@drawable/asi_asset_9</item>
+        <item>@drawable/asi_asset_10</item>
+        <item>@drawable/asi_asset_11</item>
     </integer-array>
 </resources>

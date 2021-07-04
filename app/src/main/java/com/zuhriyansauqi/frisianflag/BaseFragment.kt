@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.zuhriyansauqi.frisianflag.databinding.FragmentSlideShowBinding
+import com.zuhriyansauqi.frisianflag.view.PaginationView
 
 open class BaseFragment(
     @ArrayRes private val assetsRes: Int,

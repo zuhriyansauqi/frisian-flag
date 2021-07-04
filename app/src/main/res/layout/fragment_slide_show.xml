@@ -28,6 +28,7 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
             android:src="@drawable/df_side_note"
             app:layout_constraintBottom_toBottomOf="@id/guidelineSideHorizontal"
             app:layout_constraintStart_toStartOf="@id/guidelineSideVertical" />
@@ -108,7 +109,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.95" />
 
-    <com.zuhriyansauqi.frisianflag.PaginationView
+    <com.zuhriyansauqi.frisianflag.view.PaginationView
         android:id="@+id/pagination"
         android:layout_width="0dp"
         android:layout_height="0dp"

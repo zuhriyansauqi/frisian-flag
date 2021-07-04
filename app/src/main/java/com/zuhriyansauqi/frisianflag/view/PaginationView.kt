@@ -1,4 +1,4 @@
-package com.zuhriyansauqi.frisianflag
+package com.zuhriyansauqi.frisianflag.view
 
 import android.content.Context
 import android.graphics.*
@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import androidx.core.content.ContextCompat
+import com.zuhriyansauqi.frisianflag.R
 
 class PaginationView @JvmOverloads constructor(
     context: Context,

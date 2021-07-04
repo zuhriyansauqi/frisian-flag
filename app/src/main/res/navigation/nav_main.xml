@@ -2,10 +2,26 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_nav"
-    app:startDestination="@id/frisianFlagFragment">
+    app:startDestination="@id/HPKFragment">
 
     <fragment
         android:id="@+id/frisianFlagFragment"
-        android:name="com.zuhriyansauqi.frisianflag.FrisianFlagFragment"
+        android:name="com.zuhriyansauqi.frisianflag.page.FrisianFlagFragment"
         android:label="FrisianFlagFragment" />
+    <fragment
+        android:id="@+id/asiFragment"
+        android:name="com.zuhriyansauqi.frisianflag.page.AsiFragment"
+        android:label="AsiFragment" />
+    <fragment
+        android:id="@+id/HPKFragment"
+        android:name="com.zuhriyansauqi.frisianflag.page.HPKFragment"
+        android:label="HPKFragment" />
+    <fragment
+        android:id="@+id/primumFragment"
+        android:name="com.zuhriyansauqi.frisianflag.page.PrimumFragment"
+        android:label="PrimumFragment" />
+    <fragment
+        android:id="@+id/stuntingFragment"
+        android:name="com.zuhriyansauqi.frisianflag.page.StuntingFragment"
+        android:label="StuntingFragment" />
 </navigation>
