@@ -13,8 +13,8 @@ import com.zuhriyansauqi.frisianflag.databinding.FragmentSlideShowBinding
 
 open class BaseFragment(
     @ArrayRes private val assetsRes: Int,
-    @ArrayRes private val backgroundsRes: Int,
-    @ArrayRes private val backgroundIndexesRes: Int
+    @ArrayRes private val backgroundsRes: Int? = null,
+    @ArrayRes private val backgroundIndexesRes: Int? = null
 ) : Fragment() {
     private var _binding: FragmentSlideShowBinding? = null
     private val binding get() = _binding!!
@@ -29,6 +29,7 @@ open class BaseFragment(
         }
 
     private var isLoading = false
+    private var isUsingCustomBackground = false
 
     private lateinit var assets: List<Int>
     private lateinit var backgrounds: Map<Int, Int>
@@ -40,8 +41,12 @@ open class BaseFragment(
     ): View {
         _binding = FragmentSlideShowBinding.inflate(inflater, container, false)
         assets = loadAssets(requireContext(), assetsRes)
-        backgrounds =
-            loadBackgrounds(requireContext(), backgroundIndexesRes, backgroundsRes)
+
+        if (backgroundsRes != null && backgroundIndexesRes != null) {
+            isUsingCustomBackground = true
+            backgrounds =
+                loadBackgrounds(requireContext(), backgroundIndexesRes, backgroundsRes)
+        }
         return binding.root
     }
 
@@ -54,7 +59,13 @@ open class BaseFragment(
         super.onViewCreated(view, savedInstanceState)
 
         gotoPage(currentPage)
+        setupPagination()
 
+        binding.prevButton.setOnClickListener { if (!isLoading) currentPage -= 1 }
+        binding.nextButton.setOnClickListener { if (!isLoading) currentPage += 1 }
+    }
+
+    private fun setupPagination() {
         with(binding.pagination) {
             numberOfItems = assets.size
             selectedItem = 1
@@ -67,24 +78,28 @@ open class BaseFragment(
                 }
             })
         }
-
-        binding.prevButton.setOnClickListener { if (!isLoading) currentPage -= 1 }
-        binding.nextButton.setOnClickListener { if (!isLoading) currentPage += 1 }
     }
 
     private fun gotoPage(page: Int, isPrev: Boolean = false) {
         isLoading = true
 
-        if (backgrounds.containsKey(page + 1))
-            binding.root.setBackgroundResource(backgrounds[page + 1]!!)
-        else
-            binding.root.background =
-                ContextCompat.getDrawable(requireContext(), R.drawable.df_background)
+        if (isUsingCustomBackground)
+            invalidateBackground(page)
 
         val exitTechniques =
             if (isPrev) Techniques.SlideOutLeft
             else Techniques.SlideOutRight
 
+        animateSlide(exitTechniques, page)
+
+        invalidateControlButton()
+        binding.pagination.selectedItem = currentPage + 1
+    }
+
+    private fun animateSlide(
+        exitTechniques: Techniques,
+        page: Int
+    ) {
         YoYo.with(exitTechniques)
             .duration(700)
             .onEnd {
@@ -99,7 +114,17 @@ open class BaseFragment(
                     .playOn(binding.slide)
             }
             .playOn(binding.slide)
+    }
 
+    private fun invalidateBackground(page: Int) {
+        if (backgrounds.containsKey(page + 1))
+            binding.root.setBackgroundResource(backgrounds[page + 1]!!)
+        else
+            binding.root.background =
+                ContextCompat.getDrawable(requireContext(), R.drawable.df_background)
+    }
+
+    private fun invalidateControlButton() {
         when (currentPage) {
             0 -> binding.prevButton.visibility = View.GONE
             assets.size - 1 -> binding.nextButton.visibility = View.GONE
@@ -108,6 +133,5 @@ open class BaseFragment(
                 binding.nextButton.visibility = View.VISIBLE
             }
         }
-        binding.pagination.selectedItem = currentPage + 1
     }
 }
