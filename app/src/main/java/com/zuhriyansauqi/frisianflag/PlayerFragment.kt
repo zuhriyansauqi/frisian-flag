@@ -70,16 +70,17 @@ class PlayerFragment : Fragment() {
         binding.player.player = player
 
         val dataSourceFactory = DataSource.Factory { AssetDataSource(requireContext()) }
-        val videoSource = ProgressiveMediaSource.Factory(dataSourceFactory, DefaultExtractorsFactory())
-            .createMediaSource(MediaItem.fromUri(loadVideoUri(requireContext(),R.string.primamil_cara_membuat_susu)))
-
-//        val videoUri = loadVideoUri(requireContext(), R.string.primamil_cara_membuat_susu)
-//        val mediaItem = MediaItem.fromUri(videoUri)
-//        player?.addMediaItem(mediaItem)
+        val mediaItem = MediaItem.fromUri(
+            loadVideoUri(requireContext(), R.string.primamil_cara_membuat_susu)
+        )
+        val videoSource =
+            ProgressiveMediaSource.Factory(dataSourceFactory, DefaultExtractorsFactory())
+                .createMediaSource(mediaItem)
 
         player?.playWhenReady = playWhenReady
         player?.seekTo(currentWindow, playbackPosition)
         player?.setMediaSource(videoSource)
+        player?.playWhenReady = true
         player?.prepare()
     }
 

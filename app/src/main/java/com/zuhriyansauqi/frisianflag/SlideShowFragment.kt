@@ -12,7 +12,7 @@ import com.daimajia.androidanimations.library.YoYo
 import com.zuhriyansauqi.frisianflag.databinding.FragmentSlideShowBinding
 import com.zuhriyansauqi.frisianflag.view.PaginationView
 
-open class BaseFragment(
+open class SlideShowFragment(
     @ArrayRes private val assetsRes: Int,
     @ArrayRes private val backgroundsRes: Int? = null,
     @ArrayRes private val backgroundIndexesRes: Int? = null
