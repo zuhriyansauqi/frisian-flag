@@ -1,7 +1,10 @@
 package com.zuhriyansauqi.frisianflag
 
 import android.content.Context
+import android.net.Uri
 import androidx.annotation.ArrayRes
+import androidx.annotation.StringRes
+import androidx.core.content.ContextCompat
 
 fun loadAssets(context: Context, @ArrayRes id: Int): List<Int> {
     val tArray = context.resources.obtainTypedArray(id)
@@ -32,4 +35,9 @@ fun loadBackgrounds(
     tArray.recycle()
 
     return result.toMap()
+}
+
+fun loadVideoUri(context: Context, @StringRes fileName: Int): Uri {
+    val name = context.getString(fileName)
+    return Uri.parse("assets:///$name")
 }

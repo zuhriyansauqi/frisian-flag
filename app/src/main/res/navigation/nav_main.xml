@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_nav"
-    app:startDestination="@id/HPKFragment">
+    app:startDestination="@id/playerFragment">
 
     <fragment
         android:id="@+id/frisianFlagFragment"
@@ -24,4 +24,8 @@
         android:id="@+id/stuntingFragment"
         android:name="com.zuhriyansauqi.frisianflag.page.StuntingFragment"
         android:label="StuntingFragment" />
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.zuhriyansauqi.frisianflag.PlayerFragment"
+        android:label="PlayerFragment" />
 </navigation>
