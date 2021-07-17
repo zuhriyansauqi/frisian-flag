@@ -69,11 +69,11 @@ class HomeFragment : Fragment() {
 
     private fun setupMenuActions() {
         with(binding) {
-            menuFrisianFlag.setOnClickListener { navigate(Page.FRISIAN_FLAG) }
-            menuHpk.setOnClickListener { navigate(Page.HPK) }
-            menuStunting.setOnClickListener { navigate(Page.STUNTING) }
-            menuAsi.setOnClickListener { navigate(Page.ASI) }
-            menuPrimamum.setOnClickListener { navigate(Page.PRIMAMUM) }
+            menuFrisianFlag.setOnClickListener { playClickSound { navigate(Page.FRISIAN_FLAG) } }
+            menuHpk.setOnClickListener { playClickSound { navigate(Page.HPK) } }
+            menuStunting.setOnClickListener { playClickSound { navigate(Page.STUNTING) } }
+            menuAsi.setOnClickListener { playClickSound { navigate(Page.ASI) } }
+            menuPrimamum.setOnClickListener { playClickSound { navigate(Page.PRIMAMUM) } }
         }
     }
 

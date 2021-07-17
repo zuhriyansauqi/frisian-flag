@@ -8,6 +8,7 @@ import android.view.animation.Animation
 import androidx.annotation.ArrayRes
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.labo.kaji.fragmentanimations.MoveAnimation
@@ -64,8 +65,15 @@ open class SlideShowFragment(
         gotoPage(currentPage)
         setupPagination()
 
-        binding.prevButton.setOnClickListener { if (!isLoading) currentPage -= 1 }
-        binding.nextButton.setOnClickListener { if (!isLoading) currentPage += 1 }
+        binding.prevButton.setOnClickListener {
+            playClickSound { if (!isLoading) currentPage -= 1 }
+        }
+        binding.nextButton.setOnClickListener {
+            playClickSound { if (!isLoading) currentPage += 1 }
+        }
+        binding.logo.setOnClickListener {
+            playClickSound { findNavController().popBackStack() }
+        }
     }
 
     private fun setupPagination() {
@@ -75,6 +83,7 @@ open class SlideShowFragment(
 
             registerListener(object : PaginationView.OnTouchListener {
                 override fun onItemTouched(page: Int) {
+                    playClickSound()
                     if (isLoading) return
                     selectedItem = page
                     currentPage = page - 1
