@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
 import androidx.annotation.ArrayRes
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
+import com.labo.kaji.fragmentanimations.MoveAnimation
 import com.zuhriyansauqi.frisianflag.databinding.FragmentSlideShowBinding
 import com.zuhriyansauqi.frisianflag.view.PaginationView
 
@@ -80,6 +82,13 @@ open class SlideShowFragment(
             })
         }
     }
+
+    override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int) =
+        if (enter) {
+            MoveAnimation.create(MoveAnimation.LEFT, enter, 700)
+        } else {
+            MoveAnimation.create(MoveAnimation.RIGHT, enter, 700)
+        }
 
     private fun gotoPage(page: Int, isPrev: Boolean = false) {
         isLoading = true

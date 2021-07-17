@@ -48,7 +48,7 @@ class HomeFragment : Fragment() {
                             animateMainMenu()
                         }
                         .playOn(binding.splashAsset)
-                }, 2000)
+                }, 300)
             }
             .playOn(binding.splashAsset)
     }
