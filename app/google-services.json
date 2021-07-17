@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "893768248466",
+    "project_id": "frisian-flag-mobile",
+    "storage_bucket": "frisian-flag-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893768248466:android:54d36d9a0fd6c143a24a4b",
+        "android_client_info": {
+          "package_name": "com.frisianflag.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893768248466-sgfnl60oav80kjmgdojod1sstf87fnrj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO1XCuRZ2NvKGw4andGQ9zoKAfOBkh6tg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893768248466-sgfnl60oav80kjmgdojod1sstf87fnrj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

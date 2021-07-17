@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_nav"
-    app:startDestination="@id/playerFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/frisianFlagFragment"
@@ -17,8 +17,8 @@
         android:name="com.zuhriyansauqi.frisianflag.page.HPKFragment"
         android:label="HPKFragment" />
     <fragment
-        android:id="@+id/primumFragment"
-        android:name="com.zuhriyansauqi.frisianflag.page.PrimumFragment"
+        android:id="@+id/primamumFragment"
+        android:name="com.zuhriyansauqi.frisianflag.page.PrimamumFragment"
         android:label="PrimumFragment" />
     <fragment
         android:id="@+id/stuntingFragment"
@@ -28,4 +28,24 @@
         android:id="@+id/playerFragment"
         android:name="com.zuhriyansauqi.frisianflag.PlayerFragment"
         android:label="PlayerFragment" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.zuhriyansauqi.frisianflag.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_frisianFlagFragment"
+            app:destination="@id/frisianFlagFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_asiFragment"
+            app:destination="@id/asiFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_HPKFragment"
+            app:destination="@id/HPKFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_primamumFragment"
+            app:destination="@id/primamumFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_stuntingFragment"
+            app:destination="@id/stuntingFragment" />
+    </fragment>
 </navigation>

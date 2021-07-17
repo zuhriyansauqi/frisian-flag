@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
+    id("com.google.gms.google-services")
     kotlin("android")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -8,10 +10,10 @@ android {
     buildToolsVersion = "30.0.3"
 
     defaultConfig {
-        applicationId = "com.zuhriyansauqi.frisianflag"
+        applicationId = "com.frisianflag.android"
         minSdkVersion(21)
         targetSdkVersion(30)
-        versionCode = 2
+        versionCode = 3
         versionName = "1.0"
 
         testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
@@ -49,6 +51,8 @@ dependencies {
     implementation("com.daimajia.androidanimations:library:2.4@aar")
     implementation("com.google.android.exoplayer:exoplayer-core:2.14.1")
     implementation("com.google.android.exoplayer:exoplayer-ui:2.14.1")
+    implementation(platform("com.google.firebase:firebase-bom:28.2.0"))
+    implementation("com.google.firebase:firebase-analytics-ktx")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")

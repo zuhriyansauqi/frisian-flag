@@ -3,6 +3,7 @@
     package="com.zuhriyansauqi.frisianflag">
 
     <application
+        android:name=".App"
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
